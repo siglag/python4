@@ -49,7 +49,7 @@ def main() -> None:
         achievements = gen_player_achievements(all_achievements)
         player_achievements[player] = achievements
         print(f"Player {format_name(player)}: {
-            format_achievements(achievements)}\n")
+            format_achievements(achievements)}")
 
     unique_achievements: set[str] = set()
     common_achievements: set[str] = set(all_achievements)
@@ -60,9 +60,9 @@ def main() -> None:
             achievements
         )
 
-    print(f"All distinct achievements: {format_achievements(
-        unique_achievements)}\n")
-    print(f"Common achievements: {format_achievements(common_achievements)}\n")
+    print(f"\nAll distinct achievements: {format_achievements(
+        unique_achievements)}")
+    print(f"Common achievements: {format_achievements(common_achievements)}")
 
     for player in player_names:
         other_achievements: set[str] = set()
