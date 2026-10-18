@@ -21,7 +21,7 @@ class colors:
         return f"{self.MAGENTA}{text}{self.RESET}"
 
 
-def main():
+def main() -> None:
     print("=== Game Data Alchemist ===")
 
     players = ["Alice", "bob", "Charlie", "dylan", "Emma",
