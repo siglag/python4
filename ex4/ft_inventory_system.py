@@ -29,7 +29,7 @@ def main() -> None:
     for argument in sys.argv[1:]:
         parts = argument.split(":")
 
-        if len(parts) != 2 or not parts[0]:
+        if len(parts) != 2 or not parts[0] or int(parts[1]) < 0:
             print(f"{colors().red("Error - invalid parameter")} {
                 colors().blue(argument)}")
             continue
