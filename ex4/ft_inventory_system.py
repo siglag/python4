@@ -28,12 +28,6 @@ def main() -> None:
 
     for argument in sys.argv[1:]:
         parts = argument.split(":")
-
-        if len(parts) != 2 or not parts[0] or int(parts[1]) < 0:
-            print(f"{colors().red("Error - invalid parameter")} {
-                colors().blue(argument)}")
-            continue
-
         item = parts[0]
 
         if item in inventory:
@@ -46,6 +40,11 @@ def main() -> None:
         except ValueError as error:
             print(f"{colors().red("Quantity error for")} '{
                 colors().blue(item)}': {error}")
+            continue
+
+        if len(parts) != 2 or not parts[0] or quantity < 0:
+            print(f"{colors().red("Error - invalid parameter")} {
+                colors().blue(argument)}")
             continue
 
         inventory.update({item: quantity})
