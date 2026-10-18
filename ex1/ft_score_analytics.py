@@ -14,9 +14,13 @@ def main() -> None:
     for argument in sys.argv[1:]:
         try:
             score = int(argument)
+            if score < 0:
+                raise Exception("Score cannot be negative")
             scores.append(score)
         except ValueError:
             print(f"Invalid parameter: '{argument}'")
+        except Exception as e:
+            print(f"Error: {e}")
 
     if len(scores) == 0:
         print("No scores provided. Usage: python3"
